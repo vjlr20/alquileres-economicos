@@ -1,4 +1,5 @@
 # Proyecto de ADP
+# minar es nuestra pasion 😎
 
 Mentalidad de Tiburon 👀🦈
 
