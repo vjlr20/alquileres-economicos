@@ -1,3 +1,7 @@
 <?php 
-	const TEST = "";
+	const HOST = "";
+	const DB = "";
+	const DRIVER = "";
+	const USER = "";
+	const PASSWORD = "";
 ?>
