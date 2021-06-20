@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <title>Editar venta de alquiler</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Se detalla la informacion del alquiler.</h1>
+        <p class="lead">Si desea eliminar este registro de alquiler, click aquí. <button class="btn btn-danger">Eliminar</button> </p>
+      </div>
+      <div class="row mt-3">
+        <div class="col-sm">
+          <p class="lead">detalles del alquiler.</p>
+          <textarea
+            class="form-control rounded-0"
+            id="exampleFormControlTextarea1"
+            rows="10"
+          ></textarea>
+        </div>
+        <div class="col-sm">
+            <label for="" class="form-label">Fecha en que se registro este alquiler</label>
+            <input type="date" class="form-control" readonly>
+          <label for="" class="form-label">Fecha entrega alquiler</label>
+          <input class="form-control" type="date" name="" />
+          <label for="" class="form-label mt-3">Total registrado</label>
+          <input class="form-control" type="number" name="" />
+          <button class="btn btn-success mt-5" type="button">Actualizar registro.</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
