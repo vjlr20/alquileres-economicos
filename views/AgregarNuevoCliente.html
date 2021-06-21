@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
+<title>Agregar Nuevo Cliente</title>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="color: white">Alquileres Economicos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" style="color: white">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white">Alquileres</a>
+                    </li>
+
+                </ul>
+                <button type="button" class="btn btn-danger">Cerrar Sesion</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-2">
+        <div class="row">
+           <div class="col-12 justify-content-center align-items-center d-flex">
+                <div class="w-50 border p-5">
+                    <div class="row">
+                        <div class="col-10">
+                            <h3 style="text-align: center;">Ingresar los Datos del Nuevo Cliente</h3>
+                        </div>
+                        
+                    </div>
+                    <div class="col-12 mt-5">
+                        <form class="POST">
+                            <div class="row">
+                                <div class="col-6 mb-3">
+                                    <label for="nombres" class="form-label">Nombres</label>
+                                    <input type="text" class="form-control" id="Nombres" placeholder="Nombres" value="" pattern="^[a-zA-Z\s]+$" title="Solo se acepta letras"  required=""/>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <label for="apellidos" class="form-label">Apellidos</label>
+                                    <input type="text" class="form-control" id="Apellidos" placeholder="Apellidos" value="" pattern="^[a-zA-Z\s]+$" title="Solo se acepta letras"  required=""/>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <label for="numContacto" class="form-label">Numero de contacto</label>
+                                    <input type="text" class="form-control" id="Contacto">
+                                </div>
+
+                                <div class="col-6 mb-3">
+                                    <label for="dui" class="form-label">DUI</label>
+                                    <input type="text" class="form-control" id="Dui">
+                                </div>
+                                <div class="col-12 text-center mt-3">
+                                    <button type="submit" class="btn btn-success">Agregar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

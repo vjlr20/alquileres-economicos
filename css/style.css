@@ -1,1 +1,33 @@
+#contenedor{
+    width: 50%;
+    border: 1px solid;
+    background-color: white;
+    margin-bottom: 35px;
+    
+}
 
+#boton{
+width: 150px;
+height: 40px;
+color: #fff;
+font-family: Century Gothic;
+margin-top: 15px;
+margin-left: 40%;
+margin-bottom: 25px;
+}
+
+.display-4{
+    margin-left: 20%;
+}
+
+.jumbotron{
+    background-color: #ABEBC6;
+}
+
+input{
+    margin-bottom: 25px;
+}
+
+label{
+    margin-top: 15px;
+}
