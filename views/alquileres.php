@@ -55,7 +55,7 @@
                             <td>0000-00-00</td>
                             <td>0000-00-00</td>
                             <td>
-                                <a href="index.php?page=detalle-alquiler&code=1" class="btn btn-primary">Ver</a>
+                                <a href="index.php?page=detalles-alquiler&code=1" class="btn btn-primary">Ver</a>
                             </td>
                         </tr>
                         <tr>

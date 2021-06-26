@@ -10,7 +10,7 @@
                 <div class="col-12 mt-5">
                     <div class="card">
                         <div class="card-body">
-                            <form class="POST" autocomplete="nope">
+                            <form method="POST" action="index.php?page=nuevo-alquiler" autocomplete="nope">
                                 <div class="mb-3">
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
