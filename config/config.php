@@ -1,4 +1,6 @@
 <?php 
+	// DATABASE Config
+
 	const HOST = "";
 	const DB = "";
 	const DRIVER = "";
