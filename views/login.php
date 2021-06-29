@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/signin.css">
+<link rel="stylesheet" href="static/css/signin.css">
 
 <style>
 	.bd-placeholder-img {
@@ -18,7 +18,7 @@
     
 <main class="form-signin text-center">
 	<form>
-		<img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+		<img class="mb-4" src="static/img/alquileres_economicos_logo.png" alt="" width="140" height="107">
 		<h1 class="h4 mt-3 mb-4 fw-normal">Por favor, identifíquese</h1>
 		<div class="form-floating">
 			<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
