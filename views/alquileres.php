@@ -28,6 +28,10 @@
         </div>
     </div>
     <br>
+    <center>
+        <a href="index.php?page=nuevo-alquiler" class="btn btn-success">Nuevo alquiler</a>
+    </center>
+    <br>
     <div>
         <h4 class="text-center">Alquileres realizados a este cliente</h4>
         <div class="container-fluid">

@@ -1,6 +1,5 @@
 <?php 
 	// DATABASE Config
-
 	const HOST = "localhost";
 	const DB = "alquileres_economicos";
 	const DRIVER = "mysql";
