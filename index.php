@@ -16,7 +16,7 @@
 	</head>
 	<body>
 		<?php
-			if (isset($_SESSION['user'])) {
+			if (isset($_SESSION['username'])) {
 				require_once 'views/main.php';
 			} else {
 				require_once 'views/login.php';
@@ -25,6 +25,7 @@
 		<script src="static/js/bootstrap.bundle.min.js"></script>
 		<script src="static/js/jquery-3.6.0.min.js"></script>
 		<script src="static/js/jquery.dataTables.min.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<script>
             $(document).ready(function () {
                 $('#myTable').DataTable();

@@ -16,7 +16,7 @@
 			<div class="d-flex">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link" href="#">Cerrar sesión&nbsp;<i class="zmdi zmdi-account-circle zmdi-hc-lg"></i></a>
+						<a class="nav-link" href="core/auth.php">Cerrar sesión&nbsp;<i class="zmdi zmdi-account-circle zmdi-hc-lg"></i></a>
 					</li>
 				</ul>
 			</div>
