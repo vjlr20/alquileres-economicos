@@ -20,7 +20,7 @@
                             <h6 class="card-text d-inline">Apellidos:</h6>&nbsp;<p class="card-text d-inline" style="font-size: 15px;">Rosales</p>
                         </div>
                         <div class="mb-3">                            
-                            <h6 class="card-text d-inline">Teléfono:</h6>&nbsp;<p class="card-text d-inline" style="font-size: 15px;">0000-0000</p>
+                            <h6 class="card-text d-inline">Teléfono:</h6>&nbsp;<p class="card-text d-inline" style="font-size: 15px;">69696969&nbsp;<a href="tel:+50369696969" class="btn btn-warning">Llamar</a> </p>
                         </div>
                     </div>
                 </div>
