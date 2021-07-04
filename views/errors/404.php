@@ -4,5 +4,6 @@
     </div>
     <div class="mb-3">
         <h2 class="text-center">Pagina no encontrada</h2>
+         <!-- pongamos a tejada aca men  -->
     </div>
 </div>
