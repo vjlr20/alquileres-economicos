@@ -48,6 +48,16 @@
                 die($e->getMessage());
             }
         }
+        public function insertClient($nombre, $apellido, $Ntelefono, $DUI){
+            try {
+                //cod$e...
+                $result = null;
+                $sql = "INSERT INTO `clientes`(`cliente_id`, `nombres`, `apellidos`, `dui`, `telefono`, `fecha_registro`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]')"
+            } catch (\Throwable $th) {
+                //throw $th;
+            }   
+             
+        }
     }
 
     $client = new Client();
@@ -66,11 +76,19 @@
             break;
 
         case 'insert':
-            
+            // el ingreso de cliente
+            $nombres = $_REQUEST['nombre'];
+            $apellido = $_REQUEST['apellido'];
+            $Ntelefono = $_REQUEST['telefono'];
+            $DUI = $_REQUEST['dui'];
+
+           $send -> insertClient($nombres, $apellido, $Ntelef, $DUI);
+
+           
             break;
 
         case 'update':
-
+            
             break;
 
         case 'delete':

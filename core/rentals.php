@@ -10,13 +10,13 @@
             $this->pdo = Connect::connection();
         }
 
-        public function insertarAlquiler($cliente, $detalles, $total, $fecha)
+        public function insertarAlquiler($cliente, $detalles, $total, $fecha, $estadoPaga)
         {
             try {
                 $result = NULL;
 
-                $sql = "INSERT INTO alquileres (cliente_id, productos, total, fecha_entrega, estado) VALUES ('1', '".$detalles."', ".$total.", ".$fecha.", '1')";
-
+                $sql = "INSERT INTO alquileres (cliente_id, productos, total, fecha_entrega, estado) VALUES ('".$cliente."', '".$detalles."', ".$total.", '".$fecha."', '".$estadoPaga."')";
+                // var_dump($sql);
                 $stm = $this->pdo->prepare($sql);
 
                 // $stm->bindParam(":cliente", $cliente);
@@ -33,7 +33,26 @@
             }
         }
 
-        
+        public function listRentals()
+        {
+            try {
+                $result = NULL;
+
+                $sql = "SELECT * FROM alquileres WHERE cliente_id = :cliente";
+
+                $stm = $this->pdo->prepare($sql);
+
+                $stm->bindParam(":cliente", $id);
+
+                $stm->execute();
+
+                $result = $stm->fetch(PDO::FETCH_ASSOC);
+
+                return $result;
+            } catch (Exception $e) {
+                die($e->getMessage());
+            } 
+        }
     }
 
     $rental = new Rental();
@@ -47,16 +66,14 @@
     $response = NULL;
 
     switch ($action) {
-        case 'list':
-            // $response = $client->listarClientes();
-            break;
-
         case 'insert':
             $detallesAlquiler = $_POST['detalles'];
             $fechaAlquiler = $_POST['fecha'];
             $totalAlquiler = $_POST['total'];
-            
-            $res = $rental->insertarAlquiler("1", $detallesAlquiler, $fechaAlquiler, $totalAlquiler);
+            $idCliente = $_POST['cliente_id'];
+            $estadoPaga = $_POST['estado'];
+            // si funciona bien no duplica nada 
+            $res = $rental->insertarAlquiler($idCliente, $detallesAlquiler, $totalAlquiler, $fechaAlquiler, $estadoPaga);
 
             header("Location: ../index.php?page=alquileres&code=1");
             break;

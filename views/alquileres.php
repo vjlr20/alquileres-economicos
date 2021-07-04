@@ -1,7 +1,11 @@
 <?php
     require_once 'core/client.php';
+    require_once 'core/rentals.php';
 
     $res = $client->getCliente(intval($_GET['code']));
+    $ren = $rental->getRentals(intval($_GET['code']));
+
+    var_dump($ren);
 ?>
 <div class="contaier-fluid">
     <div class="mb-3">
@@ -53,6 +57,10 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <?php
+                        if (count($ren) > 0) {
+                            foreach ($ren as $row) {
+                    ?>
                         <tr>
                             <td>1</td>
                             <td>Sillas grandes 10, ...</td>
@@ -67,20 +75,16 @@
                                 <a href="index.php?page=detalles-alquiler&code=1" class="btn btn-primary">Ver</a>
                             </td>
                         </tr>
+                    <?php
+                            }
+                        } else {
+                    ?>
                         <tr>
-                            <td>1</td>
-                            <td>Mesas medianas 20, ...</td>
-                            <td>
-                                <span class="text-success">
-                                    <strong>$255.85</strong>
-                                </span>
-                            </td>
-                            <td>0000-00-00</td>
-                            <td>0000-00-00</td>
-                            <td>
-                                <a href="index.php?page=alquileres" class="btn btn-primary">Ver</a>
-                            </td>
+                            <td colspan="6">No se encontraron registros</td>
                         </tr>
+                    <?php 
+                        } 
+                    ?>
                     </tbody>
                 </table>
             </div>
