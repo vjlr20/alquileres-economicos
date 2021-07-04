@@ -31,8 +31,8 @@
 
     $client = new Client();
 
-    if (isset($_GET['action'])) {
-        $action = $_GET['action'];
+    if (isset($_POST['action'])) {
+        $action = $_POST['action'];
     } else {
         $action = "list";
     }
