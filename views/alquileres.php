@@ -1,3 +1,8 @@
+<?php
+    require_once 'core/client.php';
+
+    $res = $client->getCliente(intval($_GET['code']));
+?>
 <div class="contaier-fluid">
     <div class="mb-3">
         <a href="index.php" class="btn btn-info"><i class="zmdi zmdi-long-arrow-return"></i>&nbsp;Regresar</a>
@@ -11,16 +16,16 @@
                     </div>
                     <div class="container-fluid">
                         <div class="mb-3">                            
-                            <h6 class="card-text d-inline">Cliente:</h6>&nbsp;<p class="card-text d-inline" style="font-size: 15px;">#1</p>
+                            <h6 class="card-text d-inline">Cliente:</h6>&nbsp;<p class="card-text d-inline" style="font-size: 15px;">#<?php echo $res['cliente_id']; ?></p>
                         </div>
                         <div class="mb-3">
-                            <h6 class="card-text d-inline">Nombres:</h6>&nbsp;<p class="card-text d-inline" style="font-size: 15px;">Edwin</p>
+                            <h6 class="card-text d-inline">Nombres:</h6>&nbsp;<p class="card-text d-inline" style="font-size: 15px;"><?php echo $res['nombres']; ?></p>
                         </div>
                         <div class="mb-3">                            
-                            <h6 class="card-text d-inline">Apellidos:</h6>&nbsp;<p class="card-text d-inline" style="font-size: 15px;">Rosales</p>
+                            <h6 class="card-text d-inline">Apellidos:</h6>&nbsp;<p class="card-text d-inline" style="font-size: 15px;"><?php echo $res['apellidos']; ?></p>
                         </div>
                         <div class="mb-3">                            
-                            <h6 class="card-text d-inline">Teléfono:</h6>&nbsp;<p class="card-text d-inline" style="font-size: 15px;">69696969&nbsp;<a href="tel:+50369696969" class="btn btn-warning">Llamar</a> </p>
+                            <h6 class="card-text d-inline">Teléfono:</h6>&nbsp;<p class="card-text d-inline" style="font-size: 15px;"><?php echo $res['telefono']; ?>&nbsp;<a href="tel:+503<?php echo $res['telefono']; ?>" class="btn btn-warning">Llamar</a> </p>
                         </div>
                     </div>
                 </div>
