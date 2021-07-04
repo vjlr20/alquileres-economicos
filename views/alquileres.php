@@ -34,7 +34,7 @@
     </div>
     <br>
     <center>
-        <a href="index.php?page=nuevo-alquiler" class="btn btn-success">Nuevo alquiler</a>
+        <a href="index.php?page=nuevo-alquiler&code=<?php echo $res['cliente_id']; ?>" class="btn btn-success">Nuevo alquiler</a>
     </center>
     <br>
     <div>

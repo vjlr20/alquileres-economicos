@@ -15,15 +15,15 @@
             try {
                 $result = NULL;
 
-                $sql = "INSERT INTO alquileres (cliente_id, productos, total, fecha_entrega, estado) VALUES (:cliente, :detalles, :total, :fecha, :estado)";
+                $sql = "INSERT INTO alquileres (cliente_id, productos, total, fecha_entrega, estado) VALUES ('1', '".$detalles."', ".$total.", ".$fecha.", '1')";
 
                 $stm = $this->pdo->prepare($sql);
 
-                $stm->bindParam(":cliente", $cliente);
-                $stm->bindParam(":detalles", $detalles);
-                $stm->bindParam(":total", $total);
-                $stm->bindParam(":fecha", $fecha);
-                $stm->bindParam(":estado", 1);
+                // $stm->bindParam(":cliente", $cliente);
+                // $stm->bindParam(":detalles", $detalles);
+                // $stm->bindParam(":total", $total);
+                // $stm->bindParam(":fecha", $fecha);
+                // $stm->bindParam(":estado", "1");
 
                 $stm->execute();
 
@@ -56,7 +56,7 @@
             $fechaAlquiler = $_POST['fecha'];
             $totalAlquiler = $_POST['total'];
             
-            $res = $rental->insertarAlquiler(1, $detallesAlquiler, $fechaAlquiler, $totalAlquiler);
+            $res = $rental->insertarAlquiler("1", $detallesAlquiler, $fechaAlquiler, $totalAlquiler);
 
             header("Location: ../index.php?page=alquileres&code=1");
             break;
