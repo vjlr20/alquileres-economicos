@@ -1,8 +1,7 @@
 <?php
-require_once 'core/client.php';
+    require_once 'core/client.php';
 
-$response = $client->getCliente(intval($_GET['code']));
-
+    $response = $client->getCliente(intval($_GET['code']));
 ?>
 <div class="container-fluid">
     <div class="text-center">
@@ -13,8 +12,8 @@ $response = $client->getCliente(intval($_GET['code']));
     </div>
     <div class="container-fluid">
         <div class="text-center">
-            <form action="../core/client.php" method="POST">
-                <input type="hidden" value="<?php echo $_GET['code'] ?>" name="clientID">
+            <form action="core/client.php" method="POST">
+                <input type="hidden" value="<?php echo $_GET['code']; ?>" name="clientID">
                 <input type="hidden" value="delete" name='action'>
                 <p class="d-inline">Si desea eliminar a su cliente, haga click aquí</p>&nbsp;&nbsp;&nbsp;<input type="submit" class="btn btn-danger" value="eliminar">
             </form>
@@ -25,7 +24,7 @@ $response = $client->getCliente(intval($_GET['code']));
             <div class="col-12 mt-5">
                 <div class="card">
                     <div class="card-body">
-                        <form method="POST" autocomplete="off" action="../core/client.php">
+                        <form method="POST" autocomplete="off" action="core/client.php">
                             <div class="mb-3">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">

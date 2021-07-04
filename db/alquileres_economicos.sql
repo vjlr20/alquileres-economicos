@@ -31,19 +31,19 @@ CREATE TABLE `alquileres` (
   `alquileres_id` int(11) NOT NULL,
   `cliente_id` int(11) NOT NULL,
   `productos` text NOT NULL,
+  `direccion` varchar(50) NOT NULL,
   `total` decimal(10,2) NOT NULL,
   `fecha_alquiler` timestamp NOT NULL DEFAULT current_timestamp(),
   `fecha_entrega` datetime NOT NULL,
-  `estado` varchar(15) NOT NULL,
-  `Direccion` varchar(50) NOT NULL
+  `estado` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `alquileres`
 --
 
-INSERT INTO `alquileres` (`alquileres_id`, `cliente_id`, `productos`, `total`, `fecha_alquiler`, `fecha_entrega`, `estado`, `Direccion`) VALUES
-(17, 1, 'Prueba de ingreso de venta de alquiler', '30.00', '2021-07-04 16:42:54', '2021-07-13 15:42:00', 'Pago parcial', 'Prueba de dirección de entrega');
+INSERT INTO `alquileres` (`alquileres_id`, `cliente_id`, `productos`, `direccion`, `total`, `fecha_alquiler`, `fecha_entrega`, `estado`) VALUES
+(17, 1, 'Prueba de ingreso de venta de alquiler', 'Prueba de dirección de entrega', '30.00', '2021-07-04 16:42:54', '2021-07-13 15:42:00', 'Pago parcial');
 
 -- --------------------------------------------------------
 

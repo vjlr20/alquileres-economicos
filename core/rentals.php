@@ -73,7 +73,7 @@
             $idCliente = $_POST['cliente_id'];
             $estadoPaga = $_POST['estado'];
             $direccion = $_POST['direccion'];
-            // si funciona bien no duplica nada 
+            
             $res = $rental->insertarAlquiler($idCliente, $detallesAlquiler, $totalAlquiler, $fechaAlquiler, $estadoPaga, $direccion);
 
             header("Location: ../index.php?page=alquileres&code=".$idCliente);
