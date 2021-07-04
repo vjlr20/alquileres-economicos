@@ -1,6 +1,10 @@
 <?php
-    require_once '../config/config.php';
-
+    if (file_exists('config/config.php')) {
+        require_once 'config/config.php';
+    } else {
+        require_once '../config/config.php';
+    }
+    
     class Connect
     {
         protected static function connection()

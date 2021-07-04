@@ -1,3 +1,6 @@
+<?php
+    require_once 'core/client.php';
+?>
 <div class="container-fluid">
     <center>
         <div class="pb-3">
@@ -7,7 +10,7 @@
             <h4>Se detalla la lista de clientes que han alquilado productos</h4>
         </div>
     </center>
-    <div class="table-responsive">
+    <div class="table-responsive text-center">
         <table id="myTable" class="table table-striped table-hover pt-3">
             <thead class="table-dark">
                 <tr>
@@ -21,58 +24,33 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Edwin</td>
-                    <td>Rosales</td>
-                    <td>0000-0000</td>
-                    <td>00000000-0</td>
-                    <td>
-                        <a href="index.php?page=alquileres&code=1" class="btn btn-success">Ver alquileres</a>
-                    </td>
-                    <td>
-                        <a href="index.php?page=detalles-cliente&code=1" class="btn btn-info">Ver cliente</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Emerson</td>
-                    <td>López</td>
-                    <td>0000-0000</td>
-                    <td>00000000-0</td>
-                    <td>
-                        <a href="#" class="btn btn-success">Ver alquileres</a>
-                    </td>
-                    <td>
-                        <a href="#" class="btn btn-info">Ver cliente</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Fernando</td>
-                    <td>Merlos</td>
-                    <td>0000-0000</td>
-                    <td>00000000-0</td>
-                    <td>
-                        <a href="#" class="btn btn-success">Ver alquileres</a>
-                    </td>
-                    <td>
-                        <a href="#" class="btn btn-info">Ver cliente</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Victor</td>
-                    <td>López</td>
-                    <td>0000-0000</td>
-                    <td>00000000-0</td>
-                    <td>
-                        <a href="#" class="btn btn-success">Ver alquileres</a>
-                    </td>
-                    <td>
-                        <a href="#" class="btn btn-info">Ver cliente</a>
-                    </td>
-                </tr>
+                <?php
+                    if (count($response) > 0) {
+                        foreach ($response as $row) {
+                ?>
+                    <tr>
+                        <td><?php echo $row['cliente_id']; ?></td>
+                        <td><?php echo $row['nombres']; ?></td>
+                        <td><?php echo $row['apellidos']; ?></td>
+                        <td><?php echo $row['telefono']; ?></td>
+                        <td><?php echo $row['dui']; ?></td>
+                        <td>
+                            <a href="index.php?page=alquileres&code=<?php echo $row['cliente_id'] ?>" class="btn btn-success">Ver alquileres</a>
+                        </td>
+                        <td>
+                            <a href="index.php?page=detalles-cliente&code=<?php echo $row['cliente_id'] ?>" class="btn btn-info">Ver cliente</a>
+                        </td>
+                    </tr>
+                <?php
+                        }
+                    } else {
+                ?>
+                    <tr>
+                        <td colspan="7">No se encontraron registros</td>
+                    </tr>
+                <?php 
+                    } 
+                ?>
             </tbody>
         </table>
     </div>
