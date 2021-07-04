@@ -10,12 +10,12 @@
             $this->pdo = Connect::connection();
         }
 
-        public function insertarAlquiler($cliente, $detalles, $total, $fecha, $estadoPaga)
+        public function insertarAlquiler($cliente, $detalles, $total, $fecha, $estadoPaga, $direccion)
         {
             try {
                 $result = NULL;
 
-                $sql = "INSERT INTO alquileres (cliente_id, productos, total, fecha_entrega, estado) VALUES ('".$cliente."', '".$detalles."', ".$total.", '".$fecha."', '".$estadoPaga."')";
+                $sql = "INSERT INTO alquileres (cliente_id, productos, total, fecha_entrega, estado, Direccion) VALUES ('".$cliente."', '".$detalles."', ".$total.", '".$fecha."', '".$estadoPaga."','".$direccion."')";
                 // var_dump($sql);
                 $stm = $this->pdo->prepare($sql);
 
@@ -72,14 +72,15 @@
             $totalAlquiler = $_POST['total'];
             $idCliente = $_POST['cliente_id'];
             $estadoPaga = $_POST['estado'];
+            $direccion = $_POST['direccion'];
             // si funciona bien no duplica nada 
-            $res = $rental->insertarAlquiler($idCliente, $detallesAlquiler, $totalAlquiler, $fechaAlquiler, $estadoPaga);
+            $res = $rental->insertarAlquiler($idCliente, $detallesAlquiler, $totalAlquiler, $fechaAlquiler, $estadoPaga, $direccion);
 
-            header("Location: ../index.php?page=alquileres&code=1");
+            header("Location: ../index.php?page=alquileres&code=".$idCliente);
             break;
 
         case 'update':
-
+            
             break;
 
         case 'delete':

@@ -36,6 +36,7 @@
                                     </div>
                                 </div>
                                 <div class="text-center">
+                                     <input type="text" hidden name="action" value="insert">
                                     <button type="submit" class="btn btn-success">Ingresar</button>
                                 </div>
                             </form>

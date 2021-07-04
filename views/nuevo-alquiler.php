@@ -40,6 +40,10 @@
                                     <input class="form-control" type="number" name="total" required />
                                 </div>
                                 <div class="mb-5">
+                                   <label for="" class="form-label ">Ingrese direccion entrega</label>
+                                   <input class="form-control" type="text" name="direccion" required/>
+                                </div>
+                                <div class="mb-5">
                                     <label for="" class="form-label mt-3">Estado</label>
                                     <select class="form-control" name="estado" id="estado" required>
                                         <option value="Pago completo">Pago completo</option>
