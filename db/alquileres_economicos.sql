@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-06-2021 a las 02:42:18
--- Versión del servidor: 10.1.35-MariaDB
--- Versión de PHP: 8.0.2
+-- Tiempo de generación: 04-07-2021 a las 04:12:18
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,10 +32,18 @@ CREATE TABLE `alquileres` (
   `cliente_id` int(11) NOT NULL,
   `productos` text NOT NULL,
   `total` decimal(10,2) NOT NULL,
-  `fecha_alquiler` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `fecha_alquiler` timestamp NOT NULL DEFAULT current_timestamp(),
   `fecha_entrega` date NOT NULL,
-  `estado` varchar(15) NOT NULL
+  `estado` varchar(15) NOT NULL,
+  `Direccion` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `alquileres`
+--
+
+INSERT INTO `alquileres` (`alquileres_id`, `cliente_id`, `productos`, `total`, `fecha_alquiler`, `fecha_entrega`, `estado`, `Direccion`) VALUES
+(10, 1, 'Detalles de venta a cliente edwin', '123.00', '2021-07-04 02:06:58', '2021-07-15', 'Pago parcial', '');
 
 -- --------------------------------------------------------
 
@@ -47,11 +55,17 @@ CREATE TABLE `clientes` (
   `cliente_id` int(11) NOT NULL,
   `nombres` varchar(50) NOT NULL,
   `apellidos` varchar(50) NOT NULL,
-  `direccion` varchar(200) NOT NULL,
   `dui` varchar(10) NOT NULL,
   `telefono` int(11) NOT NULL,
-  `fecha_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `fecha_registro` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`cliente_id`, `nombres`, `apellidos`, `dui`, `telefono`, `fecha_registro`) VALUES
+(1, 'Edwinss', 'Rosales', '50336598-9', 22501889, '2021-07-03 19:58:48');
 
 -- --------------------------------------------------------
 
@@ -66,7 +80,7 @@ CREATE TABLE `usuarios` (
   `usuario` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `fecha_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `fecha_registro` timestamp NOT NULL DEFAULT current_timestamp(),
   `estado` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -108,13 +122,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `alquileres`
 --
 ALTER TABLE `alquileres`
-  MODIFY `alquileres_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `alquileres_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
