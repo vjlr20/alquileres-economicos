@@ -33,7 +33,7 @@
             }
         }
 
-        public function listRentals()
+        public function listRentals($id)
         {
             try {
                 $result = NULL;
@@ -46,7 +46,7 @@
 
                 $stm->execute();
 
-                $result = $stm->fetch(PDO::FETCH_ASSOC);
+                $result = $stm->fetchAll(PDO::FETCH_ASSOC);
 
                 return $result;
             } catch (Exception $e) {

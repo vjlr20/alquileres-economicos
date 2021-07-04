@@ -10,16 +10,16 @@
                 <div class="col-12 mt-5">
                     <div class="card">
                         <div class="card-body">
-                            <form method="POST" action="index.php?page=nuevo-alquiler" autocomplete="nope">
+                            <form method="POST" action="../core/client.php" autocomplete="nope">
                                 <div class="mb-3">
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="nombres" class="form-label">Nombres</label>
-                                            <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Nombres" pattern="^[a-zA-Z\s]+$" title="Solo se acepta letras" required autocomplete="nope">
+                                            <input type="text" class="form-control" id="nombres" name="nombre" placeholder="Nombres" pattern="^[a-zA-Z\s]+$" title="Solo se acepta letras" required autocomplete="nope">
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="apellidos" class="form-label">Apellidos</label>
-                                            <input type="text" class="form-control" id="apellidos" name="apellidos"  placeholder="Apellidos" pattern="^[a-zA-Z\s]+$" title="Solo se acepta letras" required autocomplete="nope">
+                                            <input type="text" class="form-control" id="apellidos" name="apellido"  placeholder="Apellidos" pattern="^[a-zA-Z\s]+$" title="Solo se acepta letras" required autocomplete="nope">
                                         </div>
                                     </div>
                                 </div>
@@ -27,7 +27,7 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="numContacto" class="form-label">Numero de contacto</label>
-                                            <input type="text" class="form-control" id="contacto" name="contacto" placeholder="0000-0000" required autocomplete="nope">
+                                            <input type="text" class="form-control" id="contacto" name="telefono" placeholder="0000-0000" required autocomplete="nope">
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="dui" class="form-label">DUI</label>

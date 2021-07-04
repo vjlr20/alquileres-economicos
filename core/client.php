@@ -52,9 +52,14 @@
             try {
                 //cod$e...
                 $result = null;
-                $sql = "INSERT INTO `clientes`(`cliente_id`, `nombres`, `apellidos`, `dui`, `telefono`, `fecha_registro`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]')"
+                $sql = "INSERT INTO clientes(nombres, apellidos, dui, telefono) VALUES ('".$nombre."','".$apellido."','".$DUI."','".$Ntelefono."')";
+
+                $stm = $this->pdo->prepare($sql);
+                $stm->execute();
+                return $result;
             } catch (\Throwable $th) {
                 //throw $th;
+                die($th->getMessage());
             }   
              
         }

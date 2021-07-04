@@ -3,9 +3,9 @@
     require_once 'core/rentals.php';
 
     $res = $client->getCliente(intval($_GET['code']));
-    $ren = $rental->getRentals(intval($_GET['code']));
+    $ren = $rental->listRentals(intval($_GET['code']));
 
-    var_dump($ren);
+    // var_dump($ren);
 ?>
 <div class="contaier-fluid">
     <div class="mb-3">
@@ -44,7 +44,7 @@
     <div>
         <h4 class="text-center">Alquileres realizados a este cliente</h4>
         <div class="container-fluid">
-            <div class="table-responsive">
+            <div class="table-responsive text-center">
                 <table id="myTable" class="table table-striped table-hover pt-3">
                     <thead class="table-dark">
                         <tr>
@@ -62,15 +62,15 @@
                             foreach ($ren as $row) {
                     ?>
                         <tr>
-                            <td>1</td>
-                            <td>Sillas grandes 10, ...</td>
+                            <td><?php echo $row['alquileres_id']; ?></td>
+                            <td><?php echo $row['productos']; ?></td>
                             <td>
                                 <span class="text-success">
-                                    <strong>$400.00</strong>
+                                    <strong>$<?php echo $row['total']; ?></strong>
                                 </span>
                             </td>
-                            <td>0000-00-00</td>
-                            <td>0000-00-00</td>
+                            <td><?php echo $row['fecha_alquiler']; ?></td>
+                            <td><?php echo $row['fecha_entrega']; ?></td>
                             <td>
                                 <a href="index.php?page=detalles-alquiler&code=1" class="btn btn-primary">Ver</a>
                             </td>
