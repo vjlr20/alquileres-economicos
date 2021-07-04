@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-07-2021 a las 04:12:18
+-- Tiempo de generación: 04-07-2021 a las 22:15:26
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -33,7 +33,7 @@ CREATE TABLE `alquileres` (
   `productos` text NOT NULL,
   `total` decimal(10,2) NOT NULL,
   `fecha_alquiler` timestamp NOT NULL DEFAULT current_timestamp(),
-  `fecha_entrega` date NOT NULL,
+  `fecha_entrega` datetime NOT NULL,
   `estado` varchar(15) NOT NULL,
   `Direccion` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -43,7 +43,7 @@ CREATE TABLE `alquileres` (
 --
 
 INSERT INTO `alquileres` (`alquileres_id`, `cliente_id`, `productos`, `total`, `fecha_alquiler`, `fecha_entrega`, `estado`, `Direccion`) VALUES
-(10, 1, 'Detalles de venta a cliente edwin', '123.00', '2021-07-04 02:06:58', '2021-07-15', 'Pago parcial', '');
+(17, 1, 'Prueba de ingreso de venta de alquiler', '30.00', '2021-07-04 16:42:54', '2021-07-13 15:42:00', 'Pago parcial', 'Prueba de dirección de entrega');
 
 -- --------------------------------------------------------
 
@@ -122,13 +122,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `alquileres`
 --
 ALTER TABLE `alquileres`
-  MODIFY `alquileres_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `alquileres_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
