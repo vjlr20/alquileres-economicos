@@ -30,7 +30,12 @@
 			<label for="floatingPassword">Contraseña</label>
 		</div>
 		<button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar Sesión</button>
-		<p class="mt-5 mb-3 text-muted">&copy; <?php echo date('Y'); ?></p>
 	</form>
+	<div class="mt-3">
+		<div class="text-center">
+			<a href="index.php?page=reestablecer" class="link">Reestablecer contraseña</a>
+		</div>
+	</div>
+	<p class="mt-5 mb-3 text-muted">&copy; <?php echo date('Y'); ?></p>
 </main>
 

@@ -37,6 +37,22 @@
                 $response = false;
             }
         }
+
+        public function restore(string $username, string $password) 
+        {
+            $response = NULL;
+
+            $pass = sha1($password);
+            
+            $sql = "UPDATE usuarios SET `password` = :pass WHERE `usuario` = :usuario";
+            
+            $stm = $this->pdo->prepare($sql);
+
+            $stm->bindParam(":pass", $pass);
+            $stm->bindParam(":usuario", $username);
+            
+            $stm->execute();
+        }
     
         public function logout() 
         {
@@ -62,6 +78,14 @@
     switch ($action) {
         case 'login':
             $response = $auth->login($_POST['username'], $_POST['password']);
+            break;
+        
+        case 'restore':
+            if ($_POST['password'] == $_POST['new-password']) {
+                $auth->restore($_POST['username'], $_POST['new-password']);
+            } else {
+                header('Location: ../index.php?page=password-error');
+            }
             break;
 
         case 'logout':

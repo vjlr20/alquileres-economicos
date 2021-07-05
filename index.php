@@ -19,7 +19,11 @@
 			if (isset($_SESSION['username'])) {
 				require_once 'views/main.php';
 			} else {
-				require_once 'views/login.php';
+				if (isset($_GET['page'])) {
+					require_once 'views/' . $_GET['page'] . '.php';
+				} else {
+					require_once 'views/login.php';
+				}
 			}
 		?>
 		<script src="static/js/bootstrap.bundle.min.js"></script>
