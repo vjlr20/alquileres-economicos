@@ -35,7 +35,7 @@
                         </div>
                         <div class="mb-2">
                             <label for="" class="form-label mt-3">Ingrese total</label>
-                            <input class="form-control" type="number" name="" />
+                            <input class="form-control" type="number" min="0" step="0.01" name="total" />
                         </div>
                         <div class="d-grid gap-2">
                             <button class="btn btn-success mt-2" type="button">Actualizar</button>

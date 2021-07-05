@@ -38,7 +38,7 @@
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12">
                                             <label for="" class="form-label mt-3">Ingrese total</label>
-                                            <input class="form-control" type="number" name="total" required />
+                                            <input class="form-control" type="number" name="total" min="0" step="0.01" required />
                                         </div>
                                     </div>
                                 </div>
