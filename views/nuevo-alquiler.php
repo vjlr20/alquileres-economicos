@@ -34,7 +34,7 @@
                                                 // Pasar formato en PHP
                                                 //echo date('d/m/Y g:i a'); 
                                             ?>
-                                            <input class="form-control" type="datetime-local" min="2021-07-03T19:00" name="fecha" required />
+                                            <input class="form-control" type="datetime-local" min="<?php echo date('Y-m-d')."T00:00"; ?>" name="fecha" required />
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12">
                                             <label for="" class="form-label mt-3">Ingrese total</label>
@@ -49,9 +49,7 @@
                                 <div class="mb-3">
                                     <label for="" class="form-label mt-3">Estado</label>
                                     <select class="form-control" name="estado" id="estado" required>
-                                        <option value="Pago completo">Pago completo</option>
-                                        <option value="Pago parcial">Pago parcial</option>
-                                        <option value="Prima">Prima</option>
+                                        <option value="abono">abono</option>
                                         <option value="Cancelado">Cancelado</option>
                                     </select>
                                 </div>

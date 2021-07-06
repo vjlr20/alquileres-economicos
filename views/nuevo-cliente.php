@@ -7,43 +7,53 @@
     </div>
     <div class="row">
         <div class="col-12 justify-content-center align-items-center d-flex">
-                <div class="col-12 mt-5">
-                    <div class="card">
-                        <div class="card-body">
-                            <form method="POST" action="core/client.php" autocomplete="nope">
-                                <div class="mb-3">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <label for="nombres" class="form-label">Nombres</label>
-                                            <input type="text" class="form-control" id="nombres" name="nombre" placeholder="Nombres" pattern="^[a-zA-Z\s]+$" title="Solo se acepta letras" required autocomplete="nope">
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <label for="apellidos" class="form-label">Apellidos</label>
-                                            <input type="text" class="form-control" id="apellidos" name="apellido"  placeholder="Apellidos" pattern="^[a-zA-Z\s]+$" title="Solo se acepta letras" required autocomplete="nope">
-                                        </div>
+            <div class="col-12 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="POST" action="core/client.php" autocomplete="off">
+                            <div class="mb-3">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <label for="nombres" class="form-label">Nombres</label>
+                                        <input type="text" class="form-control" id="nombres" name="nombre"
+                                            placeholder="Nombres" pattern="^[a-zA-Z\s]+$" title="Solo se acepta letras"
+                                            required>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <label for="apellidos" class="form-label">Apellidos</label>
+                                        <input type="text" class="form-control" id="apellidos" name="apellido"
+                                            placeholder="Apellidos" pattern="^[a-zA-Z\s]+$"
+                                            title="Solo se acepta letras" required>
                                     </div>
                                 </div>
-                                <div class="mb-4">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <label for="numContacto" class="form-label">Numero de contacto</label>
-                                            <input type="text" class="form-control" id="contacto" name="telefono" placeholder="0000-0000" required autocomplete="nope">
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <label for="dui" class="form-label">DUI</label>
-                                            <input type="text" class="form-control" id="dui" name ="dui" placeholder="00000000-0" required autocomplete="nope">
-                                        </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <label for="numContacto" class="form-label">Numero de contacto</label>
+                                        <input type="text" class="form-control" id="contacto" name="telefono"
+                                            placeholder="00000000" pattern="^[2|6|7]\d{7}$"
+                                            oninvalid="this.setCustomValidity('Utilice un formato de 8 digitos sin guion')"
+                                            oninput="this.setCustomValidity('')" required>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <label for="dui" class="form-label">DUI</label>
+                                        <input type="text" class="form-control" id="dui" name="dui"
+                                            placeholder="00000000-0" pattern="^\d{8}-\d{1}$"
+                                            oninvalid="this.setCustomValidity('Utilice un formato de 8 digitos seguidos de un guion y un digito (********-*)')"
+                                            oninput="this.setCustomValidity('')" required>
                                     </div>
                                 </div>
-                                <div class="text-center">
-                                     <input type="text" hidden name="action" value="insert">
-                                    <button type="submit" class="btn btn-success">Ingresar</button>
-                                </div>
-                            </form>
-                        </div>
+                            </div>
+                            <div class="text-center">
+                                <input type="text" hidden name="action" value="insert">
+                                <button type="submit" class="btn btn-success">Ingresar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </div>  
+            </div>
         </div>
     </div>
+</div>
 </div>

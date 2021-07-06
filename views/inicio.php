@@ -1,5 +1,5 @@
 <?php
-    require_once 'core/client.php';
+require_once 'core/client.php';
 ?>
 <div class="container-fluid">
     <center>
@@ -25,34 +25,35 @@
             </thead>
             <tbody>
                 <?php
-                    if (count($response) > 0) {
-                        foreach ($response as $row) {
+                if (count($response) > 0) {
+                    $i = 0;
+                    foreach ($response as $row) {
+                        $i++;
                 ?>
-                    <tr>
-                        <td><?php echo $row['cliente_id']; ?></td>
-                        <td><?php echo $row['nombres']; ?></td>
-                        <td><?php echo $row['apellidos']; ?></td>
-                        <td><?php echo $row['telefono']; ?></td>
-                        <td><?php echo $row['dui']; ?></td>
-                        <td>
-                            <a href="index.php?page=alquileres&code=<?php echo $row['cliente_id'] ?>" class="btn btn-success">Ver alquileres</a>
-                        </td>
-                        <td>
-                            <a href="index.php?page=detalles-cliente&code=<?php echo $row['cliente_id'] ?>" class="btn btn-info">Ver cliente</a>
-                        </td>
-                    </tr>
-                <?php
-                        }
-                    } else {
-                ?>
+                        <tr>
+                            <td><?php echo $i; ?></td>
+                            <td><?php echo $row['nombres']; ?></td>
+                            <td><?php echo $row['apellidos']; ?></td>
+                            <td><?php echo $row['telefono']; ?></td>
+                            <td><?php echo $row['dui']; ?></td>
+                            <td>
+                                <a href="index.php?page=alquileres&code=<?php echo $row['cliente_id'] ?>" class="btn btn-success">Ver alquileres</a>
+                            </td>
+                            <td>
+                                <a href="index.php?page=detalles-cliente&code=<?php echo $row['cliente_id'] ?>" class="btn btn-info">Ver cliente</a>
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                } else {
+                    ?>
                     <tr>
                         <td colspan="7">No se encontraron registros</td>
                     </tr>
-                <?php 
-                    } 
+                <?php
+                }
                 ?>
             </tbody>
         </table>
     </div>
 </div>
-

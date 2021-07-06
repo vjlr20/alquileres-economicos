@@ -189,7 +189,7 @@
 
             $send = $client->updateClient($clientID, $nombres, $apellido, $dui, $telefono);
             // echo "aqui";  
-            header ('Location: ../index.php');
+            header ('Location: ../index.php?page=alquileres&code='.$clientID);
             break;
 
         case 'delete':

@@ -59,10 +59,12 @@
                     <tbody>
                         <?php
                         if (count($ren) > 0) {
+                            $i =0;
                             foreach ($ren as $row) {
+                                $i++;
                         ?>
                                 <tr>
-                                    <td><?php echo $row['alquileres_id']; ?></td>
+                                    <td><?php echo $i; ?></td>
                                     <td><?php echo $row['productos']; ?></td>
                                     <td>
                                         <span class="text-success">
@@ -72,7 +74,7 @@
                                     <td><?php echo $row['fecha_alquiler']; ?></td>
                                     <td><?php echo $row['fecha_entrega']; ?></td>
                                     <td>
-                                        <a href="index.php?page=detalles-alquiler&code=1" class="btn btn-primary">Ver</a>
+                                        <a href="index.php?page=detalles-alquiler&code=<?php echo $row['alquileres_id'];?>&idcliente=<?php echo $_GET['code']?>" class="btn btn-primary">Ver</a>
                                     </td>
                                 </tr>
                             <?php
