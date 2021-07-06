@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-07-2021 a las 22:15:26
+-- Tiempo de generación: 06-07-2021 a las 19:46:57
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -35,15 +35,9 @@ CREATE TABLE `alquileres` (
   `total` decimal(10,2) NOT NULL,
   `fecha_alquiler` timestamp NOT NULL DEFAULT current_timestamp(),
   `fecha_entrega` datetime NOT NULL,
-  `estado` varchar(15) NOT NULL
+  `estado` varchar(15) NOT NULL,
+  `abono` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `alquileres`
---
-
-INSERT INTO `alquileres` (`alquileres_id`, `cliente_id`, `productos`, `direccion`, `total`, `fecha_alquiler`, `fecha_entrega`, `estado`) VALUES
-(17, 1, 'Prueba de ingreso de venta de alquiler', 'Prueba de dirección de entrega', '30.00', '2021-07-04 16:42:54', '2021-07-13 15:42:00', 'Pago parcial');
 
 -- --------------------------------------------------------
 
@@ -59,13 +53,6 @@ CREATE TABLE `clientes` (
   `telefono` int(11) NOT NULL,
   `fecha_registro` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `clientes`
---
-
-INSERT INTO `clientes` (`cliente_id`, `nombres`, `apellidos`, `dui`, `telefono`, `fecha_registro`) VALUES
-(1, 'Edwinss', 'Rosales', '50336598-9', 22501889, '2021-07-03 19:58:48');
 
 -- --------------------------------------------------------
 
@@ -89,7 +76,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`usuario_id`, `nombres`, `apellidos`, `usuario`, `email`, `password`, `fecha_registro`, `estado`) VALUES
-(1, 'Manuel', 'Galdamez', 'alquileres', 'alquileres@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2021-06-29 20:23:53', 1);
+(2, 'Edwin', 'Rosales', 'EdwinRos', 'edwin@gmail.com', 'b3e8426b3fa834036f0dab5423606cb4a7035adb', '2021-07-06 03:27:22', 1),
+(3, 'Manuel', 'Galdamez', 'Manuelgmez', 'ManuelGaldamez@gmail.com', '600998cabb314b1b158227b7045646405d7d506d', '2021-07-06 04:10:54', 1);
 
 --
 -- Índices para tablas volcadas
@@ -122,19 +110,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `alquileres`
 --
 ALTER TABLE `alquileres`
-  MODIFY `alquileres_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `alquileres_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
