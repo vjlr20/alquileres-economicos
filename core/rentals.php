@@ -10,12 +10,12 @@ class Rental extends Connect
         $this->pdo = Connect::connection();
     }
 
-    public function insertarAlquiler($cliente, $detalles, $total, $fecha, $estadoPaga, $direccion)
+    public function insertarAlquiler($cliente, $detalles, $total, $fecha, $estadoPaga, $direccion, $abono)
     {
         try {
             $result = NULL;
 
-            $sql = "INSERT INTO alquileres (cliente_id, productos, total, fecha_entrega, estado, Direccion) VALUES ('" . $cliente . "', '" . $detalles . "', " . $total . ", '" . $fecha . "', '" . $estadoPaga . "','" . $direccion . "')";
+            $sql = "INSERT INTO alquileres (cliente_id, productos, total, fecha_entrega, estado, Direccion, abono) VALUES ('" . $cliente . "', '" . $detalles . "', " . $total . ", '" . $fecha . "', '" . $estadoPaga . "','" . $direccion . "','".$abono."')";
             // var_dump($sql);
             $stm = $this->pdo->prepare($sql);
 
@@ -32,12 +32,12 @@ class Rental extends Connect
             die($e->getMessage());
         }
     }
-    public function updateRentals($idAlquiler, $detalles, $total, $fecha, $estadoPaga, $direccion)
+    public function updateRentals($idAlquiler, $detalles, $total, $fecha, $estadoPaga, $direccion, $abono)
     {
         try {
             //code...
             $result = null;
-            $sql = "UPDATE `alquileres` SET `productos`=:productos,`total`=:total,`fecha_entrega`=:fecha_entrega,`estado`=:estado,`Direccion`=:Direccion WHERE alquileres_id = :alquileres_id";
+            $sql = "UPDATE `alquileres` SET `productos`=:productos,`total`=:total,`fecha_entrega`=:fecha_entrega,`estado`=:estado,`Direccion`=:Direccion, `abono`=:abono WHERE alquileres_id = :alquileres_id";
             $stm = $this->pdo->prepare($sql);
             $stm->bindParam(":productos", $detalles);
             $stm->bindParam(":total", $total);
@@ -45,6 +45,7 @@ class Rental extends Connect
             $stm->bindParam(":estado", $estadoPaga);
             $stm->bindParam(":Direccion", $direccion);
             $stm->bindParam(":alquileres_id", $idAlquiler);
+            $stm->bindParam(":abono", $abono);
             $stm->execute();
             return $result;
         } catch (Throwable $th) {
@@ -91,7 +92,7 @@ class Rental extends Connect
         try {
             $result = NULL;
 
-            $sql = "SELECT * FROM alquileres WHERE cliente_id = :cliente";
+            $sql = "SELECT * FROM alquileres WHERE cliente_id = :cliente ORDER BY `alquileres`.`fecha_alquiler` DESC";
 
             $stm = $this->pdo->prepare($sql);
 
@@ -158,8 +159,14 @@ switch ($action) {
         $idCliente = $_POST['cliente_id'];
         $estadoPaga = $_POST['estado'];
         $direccion = $_POST['direccion'];
+        $abono;
+        if(!empty($_POST['abono'])){
+            $abono = $_POST['abono'];
+        }else{
+            $abono = "";
+        }
 
-        $res = $rental->insertarAlquiler($idCliente, $detallesAlquiler, $totalAlquiler, $fechaAlquiler, $estadoPaga, $direccion);
+        $res = $rental->insertarAlquiler($idCliente, $detallesAlquiler, $totalAlquiler, $fechaAlquiler, $estadoPaga, $direccion, $abono);
 
         header("Location: ../index.php?page=alquileres&code=" . $idCliente);
         break;
@@ -172,8 +179,14 @@ switch ($action) {
         $estadoPaga = $_POST['estado'];
         $direccion = $_POST['direccion'];
         $clienteReturn = $_POST['cliente'];
+        $abono;
+        if(!empty($_POST['abono'])){
+            $abono = $_POST['abono'];
+        }else{
+            $abono = "";
+        }
 
-        $res = $rental->updateRentals($idAlquiler, $detallesAlquiler, $totalAlquiler, $fechaAlquiler, $estadoPaga, $direccion);
+        $res = $rental->updateRentals($idAlquiler, $detallesAlquiler, $totalAlquiler, $fechaAlquiler, $estadoPaga, $direccion, $abono);
 
         header("Location: ../index.php?page=detalles-alquiler&code=" . $idAlquiler . "&idcliente=" . $clienteReturn);
         break;

@@ -58,9 +58,18 @@ $response = $rental->getRental(intval($_GET['code']));
                             <label for="" class="form-label mt-3">Estado de paga</label>
 
                             <select class="form-control" name="estado" id="estado" required>
-                                <option value="Abono" <?php echo $response['estado'] == 'Pago completo' ? 'selected="selected"' : 'id="asd"'; ?>>Pago completo</option>
+                                <option value="abono" <?php echo $response['estado'] == 'abono' ? 'selected="selected"' : 'id="asd"'; ?>>Abono</option>
                                 <option value="Cancelado" <?php echo $response['estado'] == 'Cancelado' ? 'selected="selected"' : ''; ?>>Cancelado</option>
                             </select>
+                        </div>
+                        <div class="mb-3" id="mostrar">
+                           <?php 
+                            if(!empty($response['abono'])){
+                                ?>
+                                <input type='number' name='abono' class='form-control' placeholder='ingrese el abono' min='0' step='0.01' value='<?php echo $response['abono']?>'required>
+                                <?php
+                            }
+                           ?>
                         </div>
                         <div class="d-grid gap-2">
                             <input type="hidden" value="<?php echo $_GET['code'] ?>" name="alquiler_id">
@@ -73,4 +82,5 @@ $response = $rental->getRental(intval($_GET['code']));
             </form>
         </div>
     </div>
+    <script src="/static/js/abono.js"></script>
 </div>

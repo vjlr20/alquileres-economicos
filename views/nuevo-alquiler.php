@@ -49,9 +49,11 @@
                                 <div class="mb-3">
                                     <label for="" class="form-label mt-3">Estado</label>
                                     <select class="form-control" name="estado" id="estado" required>
-                                        <option value="abono">abono</option>
-                                        <option value="Cancelado">Cancelado</option>
+                                        <option value="abono" >abono</option>
+                                        <option value="cancelado" selected>Cancelado</option>
                                     </select>
+                                </div>
+                                <div class="mb-3" id="mostrar">
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
@@ -72,4 +74,5 @@
             </div>
         </div>
     </div>
+    <script src="../static/js/abono.js"></script>
 </div>
