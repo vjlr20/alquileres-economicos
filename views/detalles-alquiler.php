@@ -17,7 +17,7 @@ $response = $rental->getRental(intval($_GET['code']));
     <div class="mb-4">
         <div class="text-center">
             <p class="d-inline">Si desea eliminar este alquilere, haga click aquí</p>&nbsp;&nbsp;&nbsp;
-            <form class="d-inline" method="post" action="/core/rentals.php">
+            <form class="d-inline" method="post" action="core/rentals.php">
                 <input type="hidden" name="action" value="delete">
                 <input type="hidden" name="alquiler_id" value="<?php echo $_GET['code'] ?>">
                 <input type="hidden" name="cliente" value="<?php echo $_GET['idcliente'] ?>">
@@ -27,7 +27,7 @@ $response = $rental->getRental(intval($_GET['code']));
     </div>
     <div class="row">
         <div class="col-12">
-            <form action="../core/rentals.php" method="POST">
+            <form action="core/rentals.php" method="POST">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <label for="detalles_label" class="label-form mb-2">Detalles del alquiler:</label>
