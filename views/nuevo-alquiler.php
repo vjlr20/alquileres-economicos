@@ -74,5 +74,5 @@
             </div>
         </div>
     </div>
-    <script src="../static/js/abono.js"></script>
+    <script src="static/js/abono.js"></script>
 </div>

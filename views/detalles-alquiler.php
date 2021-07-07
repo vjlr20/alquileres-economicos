@@ -82,5 +82,5 @@ $response = $rental->getRental(intval($_GET['code']));
             </form>
         </div>
     </div>
-    <script src="/static/js/abono.js"></script>
+    <script src="static/js/abono.js"></script>
 </div>
